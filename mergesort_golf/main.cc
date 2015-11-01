@@ -37,10 +37,9 @@ void merge(vector<unsigned int> &vec, int start, int mid, int end)
 void mergesort(vector<unsigned int> &vec, int start, int end)
 {
     if (start < end) {
-        int mid = (start + end) / 2;
-        mergesort(vec, start, mid);
-        mergesort(vec, mid + 1, end);
-        merge(vec, start, mid, end);
+        mergesort(vec, start, ((start+end)/2));
+        mergesort(vec, (((start+end)/2)+1)), end);
+        merge(vec, start, ((start+end)/2), end);
     }
 }
 //END GOLF
